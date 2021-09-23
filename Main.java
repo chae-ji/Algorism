@@ -7,22 +7,26 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-        String arr[] = new String[t];
-
+        int arr[] = new int[t];
         for(int i = 0; i < t; i++){
-            arr[i] = sc.next();
+            arr[i] = sc.nextInt();
+            int num[] = new int[arr[i]];
             int cnt = 0;
             int sum = 0;
 
-            for(int j = 0; j < arr[i].length(); j++){
-                if(arr[i].charAt(j) == 'O'){
-                    cnt++;
-                } else {
-                    cnt = 0;
-                }
-                sum += cnt;
+            for(int j = 0; j < arr[i]; j++){
+
+                num[j] = sc.nextInt();
+                sum += num[j];
             }
-            System.out.println(sum);
+            double avg = sum / arr[i];
+
+            for(int j = 0; j< arr[i]; j++){
+                if(num[j] > avg){
+                    cnt++;
+                }
+            }
+            System.out.println(String.format("%.3f%%", (double) cnt / arr[i] *100));
         }
     }
 }
