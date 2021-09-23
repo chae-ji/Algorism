@@ -6,27 +6,23 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        String arr[] = new String[t];
 
-        int num = sc.nextInt();
-        double numMax = 0;
-        double result = 0;
+        for(int i = 0; i < t; i++){
+            arr[i] = sc.next();
+            int cnt = 0;
+            int sum = 0;
 
-        int[] arr = new int[num];
-        double[] arr2 = new double[num];
-
-        for(int i = 0; i < num; i++){
-            arr[i] = sc.nextInt();
-            if(arr[i] > numMax){
-                numMax = arr[i];
+            for(int j = 0; j < arr[i].length(); j++){
+                if(arr[i].charAt(j) == 'O'){
+                    cnt++;
+                } else {
+                    cnt = 0;
+                }
+                sum += cnt;
             }
+            System.out.println(sum);
         }
-        sc.close();
-
-        for(int i =0; i < num; i ++){
-            arr2[i] = arr[i]/numMax*100;
-            result += arr2[i];
-        }
-        System.out.println(result/num);
-
     }
 }
