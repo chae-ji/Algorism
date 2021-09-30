@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Long a = sc.nextLong();
+        Long b = sc.nextLong();
+        Long c = sc.nextLong();
+        Long count = 0L;
+
+        if (a != 0 && c - b <= 0) {
+            System.out.println("-1");
+        } else {
+            count = a / (c - b) + 1;
+            System.out.println(count);
+        }
+
+
+    }
+
+}
