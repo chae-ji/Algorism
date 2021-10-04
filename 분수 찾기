@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+        int cnt = 0;
+        int change = 1;
+        while (true) {
+            if (change % 2 == 0) {
+                int a = 1;
+                int b = change;
+
+                while (true) {
+                    cnt++;
+                    if (num == cnt) {
+                        System.out.println(a + "/" + b);
+                        break;
+                    }
+                    if (b == 1) {
+                        change++;
+                        break;
+                    }
+                    a++;
+                    b--;
+
+                }
+            }else{
+                int a = change;
+                int b = 1;
+
+                while (true) {
+                    cnt++;
+                    if (num == cnt) {
+                        System.out.println(a + "/" + b);
+                        break;
+                    }
+                    if (a == 1) {
+                        change++;
+                        break;
+                    }
+                    a--;
+                    b++;
+
+                }
+            }
+            if (num == cnt) {
+                break;
+            }
+
+        }
+
+    }
+}
